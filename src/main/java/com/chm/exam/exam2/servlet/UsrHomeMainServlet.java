@@ -1,4 +1,4 @@
-package com.chm.exam.exam2;
+package com.chm.exam.exam2.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/usr/home/main")
-public class UsrHomeMain extends HttpServlet {
+public class UsrHomeMainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public UsrHomeMain() {
+    public UsrHomeMainServlet() {
         super();
     }
 
