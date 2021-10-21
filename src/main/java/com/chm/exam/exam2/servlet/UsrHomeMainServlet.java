@@ -16,8 +16,7 @@ public class UsrHomeMainServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String name = request.getParameter("name");
-		
+
 		// 들어오는 파라미터를 UTF-8로 해석
 		request.setCharacterEncoding("UTF-8");
 		
