@@ -24,10 +24,6 @@ public class UsrArticleDoWriteServlet extends HttpServlet {
 		
 		String title = request.getParameter("title");
 		String body = request.getParameter("body");
-		//받아서 DB로 전송
-		
-		//response.getWriter().append(title + "<br>");
-		//response.getWriter().append(body + "<br>");
 		
 	}
 
