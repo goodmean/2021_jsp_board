@@ -24,8 +24,7 @@ public class UsrHomeMainServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		// HTML이 UTF-8 형식이라는 것을 브라우저에게 알린다.
 		response.setContentType("text/html;charset=utf-8");
-		
-		response.getWriter().append(name);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
