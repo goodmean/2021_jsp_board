@@ -26,7 +26,6 @@ public class UsrArticleDoWriteServlet extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		
 		MysqlUtil.setDBInfo("localhost", "chmst", "chm1234", "jsp_board");
-
 		MysqlUtil.setDevMode(true);
 		
 		String title = request.getParameter("title");
