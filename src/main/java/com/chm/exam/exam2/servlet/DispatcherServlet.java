@@ -17,31 +17,30 @@ import com.chm.mysqlutil.MysqlUtil;
 public class DispatcherServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
 		Rq rq = new Rq(req, resp);
-		
-		if( rq.isInvalid() ) {
+
+		if (rq.isInvalid()) {
 			rq.print("올바른 요청이 아닙니다.");
 		}
-		
+
 		Controller controller = null;
-		
-		switch ( rq.getControllerName() ) {
+
+		switch (rq.getControllerTypeName()) {
 		case "usr":
-			switch ( rq.getControllerName() ) {
+			switch (rq.getControllerName()) {
 			case "article":
 				controller = new UsrArticleController();
 				break;
 			}
-			
+
 			break;
 		}
 
-		if ( controller != null ) {
-			
+		if (controller != null) {
 			MysqlUtil.setDBInfo("localhost", "chmst", "chm1234", "jsp_board");
 			MysqlUtil.setDevMode(true);
 
 			controller.performAction(rq);
-		
+
 			MysqlUtil.closeConnection();
 		}
 	}
@@ -49,5 +48,4 @@ public class DispatcherServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doGet(req, resp);
 	}
-
 }

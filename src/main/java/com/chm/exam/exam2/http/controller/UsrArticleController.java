@@ -6,7 +6,7 @@ public class UsrArticleController extends Controller {
 
 	@Override
 	public void performAction(Rq rq) {
-		switch ( rq.getActionMethodName() ) {
+		switch (rq.getActionMethodName()) {
 		case "write":
 			actionShowWrite(rq);
 			break;
@@ -17,11 +17,15 @@ public class UsrArticleController extends Controller {
 	}
 
 	private void actionDoWrite(Rq rq) {
+		String title = rq.getParam("title", "");
+		String body = rq.getParam("body", "");
+		
+		rq.printf("title : %s<br>\n", title);
+		rq.printf("body : %s<br>\n", body);
 		
 	}
-	
+
 	private void actionShowWrite(Rq rq) {
 		rq.jsp("usr/article/write");
 	}
-
 }
