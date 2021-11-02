@@ -2,17 +2,14 @@ package com.chm.exam.exam2.http.service;
 
 import java.util.List;
 
+import com.chm.exam.exam2.container.Container;
 import com.chm.exam.exam2.dto.Article;
 import com.chm.exam.exam2.dto.ResultData;
 import com.chm.exam.exam2.util.Ut;
 import com.chm.exam.exam2.http.repository.ArticleRepository;
 
 public class ArticleService {
-	private ArticleRepository articleRepository; 
-	
-	public ArticleService() {
-		articleRepository = new ArticleRepository();
-	}
+	private ArticleRepository articleRepository = Container.articleRepository;
 	
 	public ResultData write(String title, String body) {
 		int id = articleRepository.write(title, body);
