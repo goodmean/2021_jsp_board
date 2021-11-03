@@ -116,6 +116,6 @@ public class Rq {
 		println("<script>");
 		printf("alert('%s');\n", msg);
 		printf("location.replace('%s');\n", redirectUri);
-		println("<script>");
+		println("</script>");
 	}
 }
