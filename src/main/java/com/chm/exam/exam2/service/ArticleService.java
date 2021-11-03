@@ -1,12 +1,12 @@
-package com.chm.exam.exam2.http.service;
+package com.chm.exam.exam2.service;
 
 import java.util.List;
 
 import com.chm.exam.exam2.container.Container;
 import com.chm.exam.exam2.dto.Article;
 import com.chm.exam.exam2.dto.ResultData;
+import com.chm.exam.exam2.repository.ArticleRepository;
 import com.chm.exam.exam2.util.Ut;
-import com.chm.exam.exam2.http.repository.ArticleRepository;
 
 public class ArticleService {
 	private ArticleRepository articleRepository = Container.articleRepository;

@@ -1,4 +1,4 @@
-package com.chm.exam.exam2.http.service;
+package com.chm.exam.exam2.service;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;

@@ -1,4 +1,4 @@
-package com.chm.exam.exam2.http.repository;
+package com.chm.exam.exam2.repository;
 
 import java.util.List;
 
