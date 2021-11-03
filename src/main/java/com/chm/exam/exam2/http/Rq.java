@@ -2,14 +2,12 @@ package com.chm.exam.exam2.http;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.chm.exam.exam2.dto.Article;
 import com.chm.exam.exam2.util.Ut;
 
 import lombok.Getter;
@@ -112,5 +110,12 @@ public class Rq {
 
 	public void setAttr(String attrName, Object attrValue) {
 		req.setAttribute(attrName, attrValue);
+	}
+
+	public void replace(String msg, String redirectUri) {
+		println("<script>");
+		printf("alert('%s');\n", msg);
+		printf("location.replace('%s');\n", redirectUri);
+		println("<script>");
 	}
 }
