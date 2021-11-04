@@ -1,31 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>JSP BOARD</title>
 
-<!-- 모바일에서 디자인이 축소되지 않게 하기 위한 코드 -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<%@ include file="../part/head.jspf" %>
 
-<!-- 폰트어썸 불러오기 -->
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+<c:set var="pageTitle" value="게시물 작성"></c:set>
 
-<!-- 데이지 UI 불러오기 -->
-<link href="https://cdn.jsdelivr.net/npm/daisyui@0.20.0/dist/full.css"
-	rel="stylesheet" type="text/css" />
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resource/font.css" />
-</head>
-
-<link rel="stylesheet"
-	href="${pageContext.request.contextPath}/resource/common.css" />
-</head>
-
-<body>
 	<section class="section section-article-write px-4">
 		<div class="container mx-auto">
 
@@ -94,5 +73,5 @@
 			</div>
 		</div>
 	</section>
-</body>
-</html>
+
+<%@ include file="../part/foot.jspf" %>	
