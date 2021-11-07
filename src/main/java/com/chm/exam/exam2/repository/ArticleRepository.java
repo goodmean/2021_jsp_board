@@ -3,6 +3,7 @@ package com.chm.exam.exam2.repository;
 import java.util.List;
 
 import com.chm.exam.exam2.dto.Article;
+import com.chm.exam.exam2.util.Ut;
 import com.chm.mysqlutil.MysqlUtil;
 import com.chm.mysqlutil.SecSql;
 
@@ -44,5 +45,21 @@ public class ArticleRepository {
 		sql.append("WHERE id = ?", id);
 		
 		return MysqlUtil.delete(sql);
+	}
+
+	public int modify(int id, String title, String body) {
+		SecSql sql = new SecSql();
+		sql.append("UPDATE article");
+		sql.append("SET updateDate = Now()");
+		
+		if( title != null ) {
+			sql.append(", title = ?", title);
+		}
+		
+		if( body != null ) {
+			sql.append(", body = ?", body);
+		}
+		
+		return MysqlUtil.update(sql);
 	}
 }
