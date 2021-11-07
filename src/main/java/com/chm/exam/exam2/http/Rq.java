@@ -2,12 +2,14 @@ package com.chm.exam.exam2.http;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.chm.exam.exam2.dto.Article;
 import com.chm.exam.exam2.util.Ut;
 
 import lombok.Getter;
@@ -92,6 +94,21 @@ public class Rq {
 		
 		return paramValue;
 	}
+	
+	public int getIntParam(String paramName, int defaultValue) {
+		String paramValue = req.getParameter(paramName);
+		
+		if ( paramValue == null ) {
+			return defaultValue;
+		}
+		
+		try {
+			return Integer.parseInt(paramValue);
+		}
+		catch(NumberFormatException e) {
+			return defaultValue;
+		}
+	}
 
 	public void printf(String format, Object... args) {
 		print(Ut.f(format, args));
@@ -118,4 +135,6 @@ public class Rq {
 		printf("location.replace('%s');\n", redirectUri);
 		println("</script>");
 	}
+
+
 }
