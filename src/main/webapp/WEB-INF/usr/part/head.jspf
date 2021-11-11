@@ -27,7 +27,7 @@
 </head>
 
 <body>
-
+${session}
 <header class="top-bar h-20 font-bold">
 	<div class="h-full container mx-auto flex">
 		<a href="/" class="top-bar__logo flex items-center px-4">

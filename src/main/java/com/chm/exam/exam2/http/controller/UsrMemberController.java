@@ -1,9 +1,11 @@
 package com.chm.exam.exam2.http.controller;
 
 import com.chm.exam.exam2.container.Container;
+import com.chm.exam.exam2.dto.Member;
 import com.chm.exam.exam2.dto.ResultData;
 import com.chm.exam.exam2.http.Rq;
 import com.chm.exam.exam2.service.MemberService;
+import com.chm.exam.exam2.util.Ut;
 
 public class UsrMemberController extends Controller {
 	private MemberService memberService = Container.memberService;
@@ -42,6 +44,11 @@ public class UsrMemberController extends Controller {
 		if (loginRd.isFail()) {
 			rq.historyBack(loginRd.getMsg());
 		}
+		
+		Member member = (Member)loginRd.getBody().get("member");
+		
+		rq.setSessionAttr("loginedMemberJson", Ut.toJson(member, ""));
+		rq.replace(loginRd.getMsg(), "../article/list");
 	}
 
 	private void actionShowLogin(Rq rq) {

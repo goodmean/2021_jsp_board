@@ -2,14 +2,12 @@ package com.chm.exam.exam2.http;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.chm.exam.exam2.dto.Article;
 import com.chm.exam.exam2.util.Ut;
 
 import lombok.Getter;
@@ -134,6 +132,19 @@ public class Rq {
 		printf("alert('%s');\n", msg);
 		printf("location.replace('%s');\n", redirectUri);
 		println("</script>");
+	}
+
+	public void setSessionAttr(String attrName, String attrValue) {
+		req.getSession().setAttribute(attrName, attrValue);
+	}
+	
+	public void removeSessionAttr(String attrName) {
+		req.getSession().removeAttribute(attrName);
+	}
+	
+	public <T> T getSessionAttr(String attrName) {
+		
+		return (T) req.getSession().getAttribute(attrName);
 	}
 
 

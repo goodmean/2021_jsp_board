@@ -64,6 +64,7 @@ public class UsrArticleController extends Controller {
 	}
 
 	private void actionShowDetail(Rq rq) {
+		
 		int id = rq.getIntParam("id", 0);
 		
 		if (id == 0) {
